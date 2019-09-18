@@ -32,12 +32,12 @@ class DPartTN_tracker(object):
         self.target_bbox = region
         self.image_first = image
         self.PE_resnet = network.resnet().to(self.device0)
-        load_state(self.PE_resnet, torch.load('/home/adrenaline36/Eval_2017/DPartTN_35/DPartTN/original.pth'))
+        load_state(self.PE_resnet, torch.load('./'))
         for param in self.PE_resnet.parameters():
             param.requires_grad = False
         self.PE_resnet.eval()
         self.PEnet =network.PE().to(self.device0)
-        load_state(self.PEnet, torch.load('/home/adrenaline36/Eval_2017/DPartTN_35/DPartTN/best_256_concat.pth', map_location="cuda:0")['state_dict'])
+        load_state(self.PEnet, torch.load('./', map_location="cuda:0")['state_dict'])
         for param in self.PEnet.parameters():
             param.requires_grad = False
         self.PEnet.eval()
@@ -47,7 +47,7 @@ class DPartTN_tracker(object):
 
         self.PG_candidate, new_gt = self.PG_mdnet(self.PGnet, self.image_first, self.target_bbox)
         self.PG_candidate = self.PG_candidate.numpy()
-        self.model =MDNet('/home/adrenaline36/Eval_2017/DPartTN_35/DPartTN/models/mdnet_imagenet_vid.pth',self.PG_candidate.shape[0]+1)
+        self.model =MDNet('./',self.PG_candidate.shape[0]+1)
         self.model.to(self.device0)
         self.model.set_learnable_params(opts['ft_layers'])
         self.criterion = BinaryLoss()
