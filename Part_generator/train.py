@@ -9,7 +9,7 @@ import numpy as np
 os.environ["CUDA_DEIVCES_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 use_gpu = torch.cuda.is_available()
-file_root = '/home/dlagkrtns/pub/db/COCO2017/'
+file_root = './'
 data_dir1 = 'train2017'
 data_dir2 = 'val2017'
 
