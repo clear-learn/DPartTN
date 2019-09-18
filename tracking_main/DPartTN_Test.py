@@ -7,7 +7,7 @@ sys.setdefaultencoding('utf8')
 import PIL.Image as Image
 import numpy as np
 from DPartTN_Tracker import *
-path = '/home/adrenaline36/Eval_2017/2017workspace/sequences/ants1/color/'
+path = './'
 
 name = '0000000'
 image =Image.open(path+'00000001.jpg').convert('RGB')
