@@ -12,7 +12,7 @@ num_epochs = 300
 lr=0.001
 weight_decay=1e-4
 batch_size=24
-file_root = '/home/adrenaline36/pub/db/COCO2017/'
+file_root = './'
 
 
 ##################### Load Train Data #####################
