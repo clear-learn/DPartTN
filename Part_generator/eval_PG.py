@@ -8,7 +8,7 @@ from resnet_yolo import resnet50 as resnet
 
 os.environ["CUDA_DEIVCES_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"]="4"
-file_root = '/home/dlagkrtns/pub/db/COCO2017/'
+file_root = './'
 data_dir1 = 'train2017'
 data_dir2 = 'val2017'
 
